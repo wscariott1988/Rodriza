@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Rodriza ERP - Faturamento Industrial com Suporte Sênior</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1b20",
+                        "neutral-background": "#F4F4F6",
+                        "secondary-container": "#fe725a",
+                        "surface-bright": "#f9f9ff",
+                        "surface-container-low": "#f3f3fa",
+                        "on-surface-variant": "#434751",
+                        "surface-variant": "#e2e2e8",
+                        "surface-container": "#eeedf4",
+                        "outline-variant": "#c3c6d2",
+                        "primary-container": "#295399",
+                        "text-dark": "#1E1E24",
+                        "outline": "#737782",
+                        "primary": "#033b80",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdcc4",
+                        "brand-blue-dark": "#1A2C54",
+                        "surface-gray": "#DEDEDE",
+                        "text-muted": "#5A5A62",
+                        "secondary": "#aa3523",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1b20"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "sm": "16px",
+                        "section-desktop": "80px",
+                        "xxl": "64px",
+                        "max-width": "1200px",
+                        "lg": "32px",
+                        "section-mobile": "48px",
+                        "xl": "48px",
+                        "base": "8px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "h2-section": ["Sora"],
+                        "body": ["Inter"],
+                        "h2-section-mobile": ["Sora"],
+                        "h3-card-mobile": ["Sora"],
+                        "display-h1": ["Sora"],
+                        "display-h1-mobile": ["Sora"],
+                        "body-emphasis": ["Inter"],
+                        "h3-card": ["Sora"],
+                        "micro-label": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2-section": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2-section-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h3-card-mobile": ["18px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-h1": ["40px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "display-h1-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-emphasis": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "h3-card": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "micro-label": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    },
+                    "boxShadow": {
+                        "soft": "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.025)"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface-container-lowest text-on-background font-body antialiased">
+
+    <!-- TopNavBar -->
+    <header class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm">
+        <div class="flex justify-between items-center px-md py-4 max-w-max-width mx-auto">
+            <a class="text-h3-card font-h3-card font-black flex items-center gap-1" href="#">
+                <span style="color: rgb(238, 46, 7);">Rodriza</span>
+                <span style="color: rgb(0, 54, 154);">ERP</span>
+            </a>
+            <nav class="hidden md:flex gap-lg items-center text-body-emphasis font-body-emphasis">
+                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#solucoes">Soluções</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#funcionalidades">Funcionalidades</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#sobre">Sobre Nós</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#faq">FAQ</a>
+            </nav>
+            <a class="hidden md:inline-flex items-center justify-center gap-2 px-sm py-2 text-on-secondary rounded-DEFAULT font-body-emphasis text-body-emphasis hover:opacity-90 transition-opacity duration-200" href="https://wa.me/5551996535458?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rodriza%20e%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20do%20meu%20faturamento%20industrial." style="background-color: rgb(238, 46, 7);">
+                <span class="material-symbols-outlined text-lg">calendar_month</span>
+                Agendar Diagnóstico
+            </a>
+            <button class="md:hidden text-on-surface-variant">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="hero" class="pt-[104px] pb-section-mobile px-md max-w-[1360px] mx-auto lg:px-[80px] lg:pb-section-desktop">
+        <div class="flex flex-col gap-lg">
+            <div class="flex flex-col gap-sm">
+                <h1 class="text-display-h1-mobile lg:text-display-h1 font-display-h1-mobile lg:font-display-h1 text-on-background">
+                    Emita sua NF-e com Precisão Industrial e conte com o Suporte de um Especialista Sênior.
+                </h1>
+                <p class="text-body font-body text-on-surface-variant">
+                    Você não contrata apenas um sistema de gestão. Você ganha a segurança de um atendimento sênior e humanizado para garantir que o seu faturamento nunca pare.
+                </p>
+            </div>
+
+            <div class="pl-sm py-2 border-l-4 rounded-r-DEFAULT bg-neutral-background/50" style="border-color: #00369A;">
+                <p class="text-body-emphasis font-body-emphasis" style="color: rgb(0, 54, 154);">
+                    "Daniel não é apenas suporte técnico, ele é seu parceiro de processos fiscais e industriais."
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-body font-body text-on-surface-variant">Suporte direto via WhatsApp</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-body font-body text-on-surface-variant">Validação fiscal com contador</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-body font-body text-on-surface-variant">Importação de dados legado</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-body font-body text-on-surface-variant">Faturamento simplificado</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-body font-body text-on-surface-variant">Estoque/Compras integrados</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="text-body font-body text-on-surface-variant">Sem taxas de implantação</span>
+                </div>
+            </div>
+
+            <div>
+                <a class="inline-flex items-center justify-center gap-2 px-lg py-4 text-on-secondary rounded-DEFAULT font-body-emphasis text-body-emphasis text-lg hover:opacity-90 transition-opacity duration-200 shadow-soft w-full md:w-auto" href="https://wa.me/5551996535458?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Rodriza%20e%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20do%20meu%20faturamento%20industrial." style="background-color: rgb(238, 46, 7);">
+                    <span class="material-symbols-outlined text-lg">calendar_month</span>
+                    Agendar Diagnóstico com o Especialista
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Crescimento Industrial Modular -->
+    <section id="solucoes" class="py-section-mobile px-md border-t" style="border-color: #B5B3B0;">
+        <div class="max-w-[1200px] mx-auto flex flex-col items-center text-center gap-lg">
+            <div class="flex flex-col gap-sm max-w-[800px]">
+                <h2 class="text-h2-section-mobile lg:text-h2-section font-h2-section" style="color: rgb(0, 54, 154);">Crescimento Industrial Modular: O sistema que evolui com a sua fábrica.</h2>
+                <p class="text-body font-body" style="color: rgb(26, 26, 30);">Comece com o faturamento essencial e ative novos módulos conforme sua demanda aumenta.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-sm w-full">
+                <div class="bg-surface-container-lowest border p-4 rounded-xl text-left" style="border-color: #B5B3B0;">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-xl" style="color: rgb(0, 54, 154);">inventory_2</span>
+                        <h3 class="text-h3-card-mobile lg:text-h3-card font-h3-card">Estoque Modular</h3>
+                    </div>
+                    <p class="text-body font-body text-on-surface-variant">Reserva automática de estoque no Pedido de Venda para evitar duplicidade.</p>
+                </div>
+                <div class="bg-surface-container-lowest border p-4 rounded-xl text-left" style="border-color: #B5B3B0;">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-xl" style="color: rgb(0, 54, 154);">precision_manufacturing</span>
+                        <h3 class="text-h3-card-mobile lg:text-h3-card font-h3-card">PCP Industrial</h3>
+                    </div>
+                    <p class="text-body font-body text-on-surface-variant">Planejamento e controle de produção com baixa automática de materiais.</p>
+                </div>
+                <div class="bg-surface-container-lowest border p-4 rounded-xl text-left" style="border-color: #B5B3B0;">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-xl" style="color: rgb(0, 54, 154);">shopping_cart</span>
+                        <h3 class="text-h3-card-mobile lg:text-h3-card font-h3-card">Compras Inteligentes</h3>
+                    </div>
+                    <p class="text-body font-body text-on-surface-variant">Cálculo automático de necessidades de matéria-prima.</p>
+                </div>
+                <div class="bg-surface-container-lowest border p-4 rounded-xl text-left" style="border-color: #B5B3B0;">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-xl" style="color: rgb(0, 54, 154);">account_balance</span>
+                        <h3 class="text-h3-card-mobile lg:text-h3-card font-h3-card">Financeiro Integrado</h3>
+                    </div>
+                    <p class="text-body font-body text-on-surface-variant">Nota emitida gera automaticamente o Contas a Receber.</p>
+                </div>
+                <div class="bg-surface-container-lowest border p-4 rounded-xl text-left" style="border-color: #B5B3B0;">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-xl" style="color: rgb(0, 54, 154);">analytics</span>
+                        <h3 class="text-h3-card-mobile lg:text-h3-card font-h3-card">BI & Custos</h3>
+                    </div>
+                    <p class="text-body font-body text-on-surface-variant">Indicadores gerenciais e relatórios simples para saber a margem.</p>
+                </div>
+            </div>
+            <div class="w-full p-4 border rounded-lg text-center" style="border-color: #B5B3B0;">
+                <p class="text-body font-body text-on-surface-variant">Quer começar apenas emitindo Notas? Configuramos e liberamos apenas o módulo fiscal para você hoje.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Pillars -->
+    <section id="funcionalidades" class="py-section-mobile lg:py-section-desktop px-md" style="background-color: #FAFAFA;">
+        <div class="max-w-[1200px] mx-auto flex flex-col gap-lg items-center text-center">
+            <div class="max-w-[800px] flex flex-col gap-sm">
+                <h2 class="text-h2-section-mobile lg:text-h2-section font-bold font-h2-section" style="color: rgb(26, 26, 30);">Por que a Rodriza é diferente?</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md w-full">
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-gray shadow-soft text-left flex flex-col gap-2">
+                    <span class="material-symbols-outlined text-4xl" style="color: rgb(0, 54, 154);">support_agent</span>
+                    <h3 class="text-h3-card font-h3-card font-semibold" style="color: rgb(0, 54, 154);">Suporte Humano Direto</h3>
+                    <p class="text-body font-body text-on-surface-variant">Sem robôs ou tickets. Você fala diretamente com quem entende da sua operação.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-gray shadow-soft text-left flex flex-col gap-2">
+                    <span class="material-symbols-outlined text-4xl" style="color: rgb(0, 54, 154);">handshake</span>
+                    <h3 class="text-h3-card font-h3-card font-semibold" style="color: rgb(0, 54, 154);">Conversamos com seu contador</h3>
+                    <p class="text-body font-body text-on-surface-variant">Alinhamos regras fiscais diretamente com a sua contabilidade.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-gray shadow-soft text-left flex flex-col gap-2">
+                    <span class="material-symbols-outlined text-4xl" style="color: rgb(0, 54, 154);">database</span>
+                    <h3 class="text-h3-card font-h3-card font-semibold" style="color: rgb(0, 54, 154);">Migração de Dados</h3>
+                    <p class="text-body font-body text-on-surface-variant">Trazemos seu histórico do sistema antigo sem custo adicional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daniel's Letter -->
+    <section id="sobre" class="py-section-mobile lg:py-section-desktop px-md bg-surface-container-lowest">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+            <div class="flex flex-col gap-4">
+                <div class="rounded-xl overflow-hidden shadow-soft aspect-[4/5] max-w-[400px] mx-auto lg:mx-0 w-full">
+                    <img alt="Daniel - Analista" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7_QwO_MywTQmVtKLTFsfxt9erSSr2xwaocj0FTHajwBd-3BwkYD-HsKHFUiKIMua-8skn11cHySCnQWgRP2Vs5WlTsW5uJ2TbtwfLV7RebZhfNWYWlyKb7r71LrYiR9VQCPS65CDMC9vcsa4sKejvv0EPdY7VKzXLohHwEbRuZ7v1anivKAxePAFjXi4HynZCtpgHNsbT9f6abxPU1VUO_Cp7msJOIX3LcMQFYM8wvg-Aa1ytgIn9cxxdp7u-QYULo2o">
+                </div>
+                <p class="text-center lg:text-left text-body-emphasis font-body-emphasis font-bold" style="color: rgb(0, 54, 154);">
+                    Daniel — Analista de Processos e Faturamento Industrial da Rodriza.
+                </p>
+            </div>
+            <div class="bg-surface-container-lowest p-6 md:p-10 border-l-4 shadow-soft" style="border-color: #B5B3B0;">
+                <div class="flex flex-col gap-sm text-body font-body text-on-surface-variant">
+                    <p>Nos meus 30 anos de experiência com chão de fábrica e faturamento, aprendi uma coisa: o software é apenas uma ferramenta. O que realmente faz a indústria rodar sem sobressaltos é a parceria entre quem usa e quem dá suporte.</p>
+                    <p>Muitas empresas vendem sistemas complexos e depois abandonam o cliente. Na Rodriza, fazemos diferente. Nós construímos relacionamentos.</p>
+                    <p>Nosso compromisso é com a sua tranquilidade. Mudar de ERP não precisa ser um trauma. Pode ser o início de uma parceria honesta e duradoura.</p>
+                    <p class="mt-4 italic font-semibold" style="color: rgb(0, 54, 154);">— Daniel, Analista de Processos e Faturamento da Rodriza</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-section-mobile lg:py-section-desktop bg-surface-container-low">
+        <div class="max-w-[1000px] mx-auto px-md flex flex-col gap-xl">
+            <h2 class="text-h2-section-mobile lg:text-h2-section font-h2-section font-bold text-center text-on-background">Perguntas Frequentes</h2>
+            <div class="flex flex-col gap-4">
+                <details class="group bg-surface-container-lowest rounded-lg border shadow-sm" style="border-color: rgb(181, 179, 176);">
+                    <summary class="flex justify-between items-center font-body-emphasis text-body-emphasis cursor-pointer list-none p-4 text-on-background">
+                        O sistema atende as regras fiscais do meu estado?
+                        <span class="transition group-open:rotate-180 material-symbols-outlined">expand_more</span>
+                    </summary>
+                    <div class="p-4 text-body font-body text-on-surface-variant border-t" style="border-color: rgb(181, 179, 176);">
+                        Sim. Configuramos o sistema de acordo com as regras tributárias do seu estado, em conjunto com o seu contador.
+                    </div>
+                </details>
+                <details class="group bg-surface-container-lowest rounded-lg border shadow-sm" style="border-color: rgb(181, 179, 176);">
+                    <summary class="flex justify-between items-center font-body-emphasis text-body-emphasis cursor-pointer list-none p-4 text-on-background">
+                        O sistema funciona offline?
+                        <span class="transition group-open:rotate-180 material-symbols-outlined">expand_more</span>
+                    </summary>
+                    <div class="p-4 text-body font-body text-on-surface-variant border-t" style="border-color: rgb(181, 179, 176);">
+                        Depende da sua operação. Para operações maiores ou com necessidade específica, oferecemos a opção de rodar o sistema dentro da infraestrutura do cliente, funcionando offline.
+                    </div>
+                </details>
+                <details class="group bg-surface-container-lowest rounded-lg border shadow-sm" style="border-color: rgb(181, 179, 176);">
+                    <summary class="flex justify-between items-center font-body-emphasis text-body-emphasis cursor-pointer list-none p-4 text-on-background">
+                        Vocês falam com o meu contador?
+                        <span class="transition group-open:rotate-180 material-symbols-outlined">expand_more</span>
+                    </summary>
+                    <div class="p-4 text-body font-body text-on-surface-variant border-t" style="border-color: rgb(181, 179, 176);">
+                        Sim! Alinhamos todas as configurações tributárias diretamente com a sua contabilidade.
+                    </div>
+                </details>
+                <details class="group bg-surface-container-lowest rounded-lg border shadow-sm" style="border-color: rgb(181, 179, 176);">
+                    <summary class="flex justify-between items-center font-body-emphasis text-body-emphasis cursor-pointer list-none p-4 text-on-background">
+                        Existe contrato de fidelidade?
+                        <span class="transition group-open:rotate-180 material-symbols-outlined">expand_more</span>
+                    </summary>
+                    <div class="p-4 text-body font-body text-on-surface-variant border-t" style="border-color: rgb(181, 179, 176);">
+                        Não existe multa rescisória, mas o cancelamento requer aviso prévio de 30 dias para garantir a transição tranquila da sua operação.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-section-mobile lg:py-section-desktop px-md">
+        <div class="max-w-[1200px] mx-auto rounded-2xl p-xl flex flex-col items-center text-center gap-6 shadow-soft" style="background-color: #00369A;">
+            <h2 class="text-display-h1-mobile lg:text-display-h1 font-display-h1 font-bold text-white">
+                Vamos organizar o faturamento da sua indústria?
+            </h2>
+            <p class="text-body-emphasis font-body-emphasis text-white max-w-[600px] opacity-90">
+                Pare de perder tempo com sistemas complexos e suportes que não resolvem.
+            </p>
+            <a class="inline-flex items-center justify-center gap-2 px-8 py-4 text-white rounded-DEFAULT font-body-emphasis text-body-emphasis text-lg hover:opacity-90 transition-opacity duration-200 shadow-soft w-full md:w-auto" href="https://wa.me/5551996535458?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Rodriza%20e%20quero%20organizar%20o%20faturamento%20da%20minha%20ind%C3%BAstria." style="background-color: rgb(238, 46, 7);">
+                <span class="material-symbols-outlined text-lg">chat</span>
+                Agendar Conversa Direta com o Daniel
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-xl bg-on-background border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-lg px-md max-w-max-width mx-auto">
+            <div class="flex flex-col gap-4 md:col-span-1">
+                <span class="text-h3-card font-h3-card font-black text-surface-bright">Rodriza ERP</span>
+                <p class="text-micro-label font-micro-label text-surface-variant">&copy; 2024 Rodriza ERP. Todos os direitos reservados.</p>
+            </div>
+            <div class="flex flex-col gap-2 md:col-span-3 md:flex-row md:justify-end md:gap-lg">
+                <a class="text-body font-body text-surface-variant hover:text-white transition-colors" href="#">Termos de Uso</a>
+                <a class="text-body font-body text-surface-variant hover:text-white transition-colors" href="#">Política de Privacidade</a>
+                <a class="text-body font-body text-surface-variant hover:text-white transition-colors" href="#">Suporte</a>
+                <a class="text-body font-body text-surface-variant hover:text-white transition-colors" href="https://wa.me/5551996535458?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Rodriza%20ERP.">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
